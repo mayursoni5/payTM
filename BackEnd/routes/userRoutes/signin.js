@@ -13,7 +13,7 @@ const signinBody = zod.object({
 });
 
 //signin route
-router.get("/", authMiddleware, async (req, res) => {
+router.post("/", async (req, res) => {
   const { success } = signinBody.safeParse(req.body);
 
   if (!success) {

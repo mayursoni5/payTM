@@ -9,6 +9,13 @@ router.get("/", authMiddleware, async (req, res) => {
   const account = await Account.findOne({
     userId: req.userId,
   });
+
+  if (!account) {
+    res.json({
+      msg: "Account not found!!",
+    });
+    return;
+  }
   res.json({
     balance: account.balance,
   });
