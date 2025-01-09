@@ -8,6 +8,12 @@ const router = express.Router();
 router.post("/", authMiddleware, async (req, res) => {
   const { amount, to } = req.body;
 
+  if (amount == null || amount == 0 || to == null) {
+    return res.status(400).json({
+      message: "You can pass NULL value",
+    });
+  }
+
   const account = await Account.findOne({
     userId: req.userId,
   });
