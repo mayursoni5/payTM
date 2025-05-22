@@ -63,7 +63,7 @@ export const SendMoney = () => {
                   const {
                     data: { message },
                   } = await axios.post(
-                    "http://localhost:3000/account/transfer",
+                    `${import.meta.env.VITE_REACT_API_URL}/account/transfer`,
                     {
                       to: id,
                       amount,
