@@ -10,7 +10,7 @@ app.use(cors());
 // app.use(bodyParser.json());
 app.use(express.json()); // same as body parser
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello World. This is my paytm!");
 });
 
 app.use("/user", userRoute);
